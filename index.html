@@ -1,26 +1,43 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Загрузочный экран</title>
 <style>
 body, html {
 height: 100%;
 margin: 0;
+background-color: #000;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #000; /* Фон страницы */
+flex-direction: column;
+color: #fff;
+font-family: Arial, sans-serif;
 }
 img {
-max-width: 100%;
-max-height: 100%;
+max-width: 80%;
+max-height: 80%;
+margin-bottom: 20px;
+}
+.loading-text {
+font-size: 24px;
+animation: fadeInOut 3s infinite;
+}
+@keyframes fadeInOut {
+0%, 100% { opacity: 0; }
+50% { opacity: 1; }
 }
 </style>
 </head>
 <body>
 <img src="https://raw.githubusercontent.com/Frinkt/Ovsanka/main/овсянск.png" alt="Loading Screen">
+<div class="loading-text">Загрузка сервера...</div>
+<script>
+// Дополнительная задержка (опционально)
+setTimeout(() => {
+document.body.style.opacity = '1';
+}, 1000); // Задержка 1 секунда
+</script>
 </body>
 </html>
